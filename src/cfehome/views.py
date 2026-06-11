@@ -8,6 +8,7 @@ def home_page(request,*args,**kwargs):
     context={
         'mypage' : 'My_Page_Title',
         'page_visits_count':page_qs.count(),
+        'Percent':(page_qs.count()/qs.count())*100,
         'total_vists_count':qs.count()
     }
     PageVisit.objects.create(path=request.path)
